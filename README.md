@@ -57,6 +57,11 @@ it could also check if the file size is real.
 I think the analyser should statically check for discord webhooks and 
 in the runtime analysis for http requests to discord.
 
+### SessionID often used
+
+Many rat's use the word sessionID as a variable name or in a websocket message.
+Searching for `Session ID` and `sessionID` (case-insensitive) and flagging it might catch some rats.
+
 ---
 
 Booth bypasses can now be combined to create the ULTIMATE BYPASS jk :D
