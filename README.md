@@ -11,10 +11,10 @@ This Repository contains 2 bypasses for [RatRater2].
 
 Short explanation of booth bypasses.
 
-### 1st bypass
+### 1st bypass (Fixed)
 
-Extracting token from `field_148258_c`.
-(©Commandcracker I think I'm the first person who found this, so I claim this methode of extracting the token :D)
+Extracting the token from `private final String token;` (`field_148258_c`) inside `net.minecraft.util.Session`.
+(The methode was found by [@Commandcracker])
 
 #### Example of bypass 1
 
@@ -43,20 +43,6 @@ field_148258_c (token)
 ```
 
 and then using reflection to access it.
-
-## Solution
-
-Solution for detecting the bypasses.
-
-### 1st bypass
-
-The 1st bypass can be fixed by searching for `field_148258_c` and marking it as a sessionID grabber.
-
-### 2nd bypass
-
-The 2nd bypass is a bit harder to detect, it needs runtime analysis.
-It would need to watch if one of the above-mentioned functions or the field is used.
-
 
 #### Encoding Example of bypass 2 with func_111286_b (getSessionID)
 
@@ -88,28 +74,5 @@ private static String getTokenFromGetToken() {
 }
 ```
 
-## Additional
-
-Additional feedback/requests for [RatRater2].
-
-### Classification: Quantiy (low confidence)
-
-It goes away if the mod has moore then one class,
-but I think it should check for the occurrence of empty and junk functions/Classes, and
-it could also check if the file size is real.
-
-### Discord websockets
-
-I think the analyser should statically check for discord webhooks and 
-in the runtime analysis for http requests to discord.
-
-### SessionID often used
-
-Many rat's use the word sessionID as a variable name or in a websocket message.
-Searching for `Session ID` and `sessionID` (case-insensitive) and flagging it might catch some rats.
-
----
-
-Booth bypasses can now be combined to create the ULTIMATE BYPASS jk :P
-
 [RatRater2]: https://github.com/KTibow/RatRater2
+[@Commandcracker]: https://github.com/Commandcracker

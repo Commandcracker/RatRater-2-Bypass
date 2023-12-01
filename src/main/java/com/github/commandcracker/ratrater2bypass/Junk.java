@@ -1,4 +1,4 @@
-package com.example.examplemod;
+package com.github.commandcracker.ratrater2bypass;
 
 public class Junk {
     /*
